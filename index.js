@@ -5,26 +5,11 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speechText = 'Welcome to the Alexa Skills Kit, you can say hello!';
+        const speechText = 'おかもです。何をメモしましょう？';
   
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
-            .withSimpleCard('Hello World', speechText)
-            .getResponse();
-    },
-};
-  
-const HelloWorldIntentHandler = {
-    canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-        && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
-    },
-    handle(handlerInput) {
-        const speechText = 'Hello World!';
-  
-        return handlerInput.responseBuilder
-            .speak(speechText)
             .withSimpleCard('Hello World', speechText)
             .getResponse();
     },
@@ -87,12 +72,13 @@ const ErrorHandler = {
     },
 };
   
-const skillBuilder = Alexa.SkillBuilders.custom();
-  
+const skillBuilder = Alexa.SkillBuilders.standard();
+
 exports.handler = skillBuilder
+    .withTableName('okamo')
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
+        require('./handlers/add_item'),
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler

@@ -81,6 +81,7 @@ exports.handler = skillBuilder
         require('./handlers/add_item'),
         require('./handlers/check_item'),
         require('./handlers/delete_item'),
+        require('./handlers/delete_all_item'),
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler

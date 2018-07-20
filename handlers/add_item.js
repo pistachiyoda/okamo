@@ -23,7 +23,7 @@ const AddItemIntentHandler = {
 
         handlerInput.attributesManager.setPersistentAttributes(attributes);
         await handlerInput.attributesManager.savePersistentAttributes();
-        const speechText = item + 'が追加されました';
+        const speechText = item.name + 'が追加されました';
         console.log(handlerInput.requestEnvelope);
     
         return handlerInput.responseBuilder

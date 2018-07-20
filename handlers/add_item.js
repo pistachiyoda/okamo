@@ -28,7 +28,7 @@ const AddItemIntentHandler = {
     
         return handlerInput.responseBuilder
             .speak(speechText)
-            .withSimpleCard('Hello World', speechText)
+            .withSimpleCard('Add Item', speechText)
             .getResponse();
     },
 };

@@ -15,7 +15,7 @@ const CheckItemIntentHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .withSimpleCard('Hello World', speechText)
+            .withSimpleCard('Item List', speechText)
             .getResponse();
     },
 };

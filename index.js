@@ -80,6 +80,7 @@ exports.handler = skillBuilder
         LaunchRequestHandler,
         require('./handlers/add_item'),
         require('./handlers/check_item'),
+        require('./handlers/delete_item'),
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler

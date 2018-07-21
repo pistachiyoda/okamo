@@ -17,6 +17,7 @@ const DeleteItemAllIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard('Delete All Item', speechText)
+            .reprompt('ほかになにをしますか？') 
             .getResponse();
     },
 };

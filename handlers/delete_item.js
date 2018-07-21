@@ -22,6 +22,7 @@ const DeleteItemIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard('Delete Item', speechText)
+            .reprompt('ほかになにをしますか？') 
             .getResponse();
     },
 };

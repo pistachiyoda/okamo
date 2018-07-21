@@ -29,6 +29,7 @@ const AddItemIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard('Add Item', speechText)
+            .reprompt('ほかになにをしますか？') 
             .getResponse();
     },
 };

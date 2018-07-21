@@ -16,6 +16,7 @@ const CheckItemIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechText)
             .withSimpleCard('Item List', speechText)
+            .reprompt('ほかになにをしますか？') 
             .getResponse();
     },
 };

@@ -54,7 +54,8 @@ const SessionEndedRequestHandler = {
     handle(handlerInput) {
         console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
   
-        return handlerInput.responseBuilder.getResponse();
+        return handlerInput.responseBuilder
+            .getResponse();
     },
 };
   
